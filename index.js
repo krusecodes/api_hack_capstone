@@ -35,15 +35,15 @@
 // $('.sidebar').hide();
 // $('#map').hide();
 
-// const apiKey = 'AIzaSyC9ONasxZiI0SNkATxdSTeyA9tzFxy_qwY'
+// const apiKey = ''
 // const baseURL = 'https://maps.googleapis.com/maps/api/place/nearbysearch'
 
-// let apiKey = "AIzaSyC9ONasxZiI0SNkATxdSTeyA9tzFxy_qwY"
+// let apiKey = ""
 
-// let URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location}&radius=50000&keyword=brewery&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&key=AIzaSyC9ONasxZiI0SNkATxdSTeyA9tzFxy_qwY"
+// let URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location}&radius=50000&keyword=brewery&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&key="
 
 // Getting multiple places
-// https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=38.8976763%2C-77.0365298&radius=50000&keyword=brewery&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&key=AIzaSyC9ONasxZiI0SNkATxdSTeyA9tzFxy_qwY
+// https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=38.8976763%2C-77.0365298&radius=50000&keyword=brewery&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&key=
 
 // $('.results-page').hide();
 
