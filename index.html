@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>API Hack Capstone</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel = "stylesheet" type = "text/css" href = "index.css" />
+  </head>
+  <body>
+    <header class="meanHeader">
+      <div class="headerContent">
+      <h1>C H E E R S.</h1>
+      <h2>Type in your zip code to find breweries near you.</h2>
+      <form class="js-search-form">
+        <input id="searchTextField" type="text" size="50" placeholder="Anything you want!">
+        <input type="submit" class="button1" value="See Map">
+      </form>  
+      </div>
+    </header>  
+
+    <section id="searched">
+        <div id="map" aria-live="polite"></div>
+        <div class="sidebar" >
+            <div class="show-results" id="show-results" aria-live="polite">
+        </div>
+        <div>
+            <ul class="results" id="results" aria-live="polite">
+              <li><h2>Name</h2></li>
+              <li><h3>Location</h3></li>
+              <li><h3>4.6 / 5</h3></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- <section role="complementary" class="results-page" >
+      <div class="sidebar" >
+        <div class="show-results" id="show-results" aria-live="polite">
+        </div>
+        <div>
+          <ul class="results" id="results" aria-live="polite"></ul>
+      </div>
+      <div id="map" aria-live="polite"></div>
+      <nav role="navigation" class="new-search">
+        <a href="#" role="button" class="btn btn--white btn--animated new-search-btn">New search</a>
+        <a href="#" role="button" class="btn btn--white btn--animated results-btn">View list</a>
+      </nav>
+    </section> -->
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=38.8976763%2C-77.0365298&radius=50000&keyword=brewery&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&key=AIzaSyC9ONasxZiI0SNkATxdSTeyA9tzFxy_qwY"></script>	 -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YAIzaSyC9ONasxZiI0SNkATxdSTeyA9tzFxy_qwY&libraries=places"></script>
+    <script src="index.js"></script>
+
+  </body>
+</html>
+
