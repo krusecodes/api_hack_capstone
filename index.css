@@ -1,83 +1,18 @@
-/* #map {
-    height: 100%;
-  }
-  /* Optional: Makes the sample page fill the window. */
-  /* html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  } */ 
-
-  * {
-    box-sizing: border-box;
-  }
-
-  html,body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
+#map {
+    height: 375px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: black;
 }
 
-  body {
-    text-align: center;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  header {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.721), rgba(255, 255, 255, 0.721)), url("Content/bence-boros-8T5UAV6KkZA-unsplash.jpg");
-    background-position: center;
+.cafe-img {
+    float: left;
+    height: 14rem;
+    width: 49%;
+    margin-right: 1%;
+    background-image: url(images/stock.jpg);
+    background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    color: #3A3B3D;
-    background-color: white;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .headerContent {
-    padding-top: 17%;
-  }
-
-  .button1 {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-  } 
-
-  .button1:hover {
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-  }
-
-  #searchTextField {
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    
-    cursor: pointer;
-  }
-
-  .results {
-    list-style: none;
-    border-style: solid;
-    border-width: 5px;
-    text-align: left;
-  }
+}
  
