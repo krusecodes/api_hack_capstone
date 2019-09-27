@@ -15,4 +15,9 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+#pac-input {
+    width: 163px;
+    margin-top: 12px;
+}
  

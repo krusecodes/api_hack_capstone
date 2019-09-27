@@ -3,7 +3,7 @@ function populateMapCafe(place, details) {
     let htmlCafePage = ``;
     htmlCafePage += `<div class="cafe-img" style="background-image: url(${details.photo})"></div>`;
     htmlCafePage += `<span class="text-container">`;
-    htmlCafePage += `<h2>${place.name}ƒ</h2>`;
+    htmlCafePage += `<h2>${place.name}</h2>`;
     if (details.address == "") { 
         console.log(details.address);
     } else {
