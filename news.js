@@ -63,7 +63,9 @@ function getNews(query, maxResults=5) {
 }
 
 function watchForm() {
-  $('form').submit(event => {
+  $('#submit').submit(event => {
+    console.log("test");
+    
     event.preventDefault();
     const searchTerm = $('#js-search-term').val();
     const maxResults = $('#js-max-results').val();
