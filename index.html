@@ -8,15 +8,17 @@
   </head>
   <body>
     <header>
-      <h1>Café Culture</h1>
-      <h2>instructions:</h2>
-      <h3>1. Type in your location and find cafés near you.</h3>
-      <h3>2. click location for more details.</h3>
+      <h1>Today's News & Coffee Brews</h1>
+      <h2>Instructions:</h2>
+      <p>1. Type in your location and find cafés near you. Click the icon for more details.</p>
+      <p>2. Find interesting news articles to read while you enjoy your coffee</p>
+      <input id="pac-input" class="controls" type="text" placeholder="Enter a location or a café name">
+      <!-- <input id="address" type="textbox" value="Sydney, NSW">
+      <input id="submit" type="button" value="Geocode"> -->
     </header>
     <main role="main">
       <section role="region" class="google-map">
-          <input id="pac-input" class="controls" type="text" placeholder="Enter a location or a café name">
-          <section id="map"></section>
+      <section id="map"></section>
       </section>
       <section role="region" id="cafe-info-page" style="display: none;">
           <div id="info-container">
@@ -28,10 +30,31 @@
               <div class="yt-results-section"></div>
           </div>
       </section>
+      <section>
+        <div class="container">
+          <h1>News finder</h1>
+  
+          <form id="js-form">
+              <label for="search-term">Search term</label>
+              <input type="text" name="search-term" id="js-search-term" required>
+  
+              <input type="submit" value="Go!">
+          </form>
+  
+          <p id="js-error-message" class="error-message"></p>
+          <section id="results" class="hidden">
+            <h2>Search results</h2>
+            <ul id="results-list">
+            </ul>
+          </section>
+      </div>
+      </section>
   </main>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5WbWVVaqL48DOFSzkJ97e7-wwzPkXyxg&libraries=places&callback=initMap" async defer></script>
+    <!-- AIzaSyC5WbWVVaqL48DOFSzkJ97e7-wwzPkXyxg -->
     <script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
     <script src="index.js"></script>
+    <script src="news.js"></script>
     <script src="app.js"></script>
 
   </body>

@@ -1,4 +1,19 @@
-  let mapStyle = [
+// fetch('https://maps.googleapis.com/maps/api/js?key=AIzaSyDttWY6FVRVPYVS04eTBI7OX0xMHgeEFNM&libraries=places&callback=initMap')
+
+// const fetchGoogleMaps = require('fetch-google-maps');
+
+// fetchGoogleMaps({
+// 	apiKey: 'AIzaSyDttWY6FVRVPYVS04eTBI7OX0xMHgeEFNM',
+// 	language: 'en',
+// 	libraries: ['geometry']
+// }).then(( Maps ) => {
+// 	const map = new Maps.Map(document.getElementById('map'), {
+// 		zoom: 8,
+// 		center: new Maps.LatLng(-34.397, 150.644)
+// 	});
+// });
+
+let mapStyle = [
     {
       "elementType": "geometry",
       "stylers": [
@@ -299,6 +314,7 @@ let bounds;
 let markers = [];
 //let index = 0;
 
+
 let iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
 // The Map
@@ -327,7 +343,7 @@ function initMap() {
     // Create the search box and link it to the UI element.
     let input = document.getElementById('pac-input');
     let searchBox = new google.maps.places.SearchBox(input);
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(input)
+    // map.controls[google.maps.ControlPosition.TOP_CENTER].push(input)
 
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
@@ -381,6 +397,7 @@ function c(results, status) {
         results.forEach(createMarker);
     }
 }
+
 function createMarker(place) {
     markers = new google.maps.Marker({
         map: map,
