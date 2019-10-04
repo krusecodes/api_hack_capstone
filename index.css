@@ -1,7 +1,4 @@
-html, body {
-    padding:0px;
-    margin:0px;
- }
+
 
  /* header { 
     background: url(Content/coffee_header) no-repeat center center fixed; 
@@ -11,18 +8,40 @@ html, body {
     background-size: cover;
   } */
 
+  * {
+    box-sizing: border-box;
+  }
+
+  html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+body {
+  font-family: "lato", "roboto";
+  
+  line-height: 1.5;
+  margin: 0;
+}
+  
+h1 {
+  text-align: center;
+}
+
   header {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.721), rgba(255, 255, 255, 0.721)), url("Content/Content/coffee_header");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.721), rgba(255, 255, 255, 0.721)), url("Content/coffee_header.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     color: #3A3B3D;
     background-color: white;
-    padding: 0;
     margin: 0;
-    width: 100%;
-    height: 100%;
+    padding: 135px;
   }
 
 
@@ -31,6 +50,39 @@ html, body {
     max-width: 800px;
     margin: 0 auto 30px;
     color: black;
+    float: left;
+    width: 50%;
+}
+
+.detailBox {
+  border: 25px;
+  border-color: black;
+  height: 250px;
+  height: 375px;
+  max-width: 800px;
+  width: 50%;
+}
+
+.container {
+  height: 375px;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: black;
+  float: left;
+  width: 50%;
+}
+
+.news {
+  overflow-y: auto;
+  height: 650px;
+}
+
+.newPics {
+  height: 300px;
+}
+
+li {
+  list-style: none;
 }
 
 .cafe-img {
@@ -44,8 +96,12 @@ html, body {
     background-repeat: no-repeat;
 }
 
-#pac-input {
+/* #info-container {
+  float: left;
+} */
+
+/* #pac-input {
     width: 163px;
     margin-top: 12px;
-}
+} */
  

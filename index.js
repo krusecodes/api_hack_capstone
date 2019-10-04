@@ -13,6 +13,10 @@
 // 	});
 // });
 
+$('#map').hide();
+$('#iconClick').hide();
+
+
 'use strict';
 
 const apiKey = 'cf4f9887a1b64546af749e8c8bf3a1c6'
@@ -38,11 +42,13 @@ function displayResults(responseJson, maxResults) {
     //list with the article title, source, author,
     //description, and image
     $('#results-list').append(
-      `<li><h3><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></h3>
+      `<h1>News finder</h1>
+      <h2>Search results</h2>
+      <li><h3><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></h3>
       <p>${responseJson.articles[i].source.name}</p>
       <p>By ${responseJson.articles[i].author}</p>
       <p>${responseJson.articles[i].description}</p>
-      <img src='${responseJson.articles[i].urlToImage}'>
+      <img class="newPics" src='${responseJson.articles[i].urlToImage}'>
       </li>`
     )};
   //display the results section  
@@ -425,6 +431,8 @@ function initMap() {
 
         let places = searchBox.getPlaces();
         let place = places[0];
+        $('#map').show();
+        $('#iconClick').show();
         //        index = 0;
 
         // places long form

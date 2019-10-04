@@ -5,26 +5,49 @@
     <title>API Hack Capstone</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link rel = "stylesheet" type = "text/css" href = "index.css" />
+    <link rel = "stylesheet" type = "text/css" href = "form.css" />
   </head>
   <body>
     <header>
       <h1>Today's News & Coffee Brews</h1>
-      <h2>Instructions:</h2>
 
-    <form>
-      <label for="question">1. Find interesting news articles to read while you enjoy your coffee.</label>
-      <input type="text" name="search-term" id="js-search-term" required>
-      <label for="question">2. Type in your location and find cafés near you. Click the icon for more details.</label>
-      <input id="pac-input" class="controls" type="text" placeholder="Enter a location or a café name" required>
-      <input id="submit" type="button" value="Find">
-    </form>
+    <form class="form-style-7">
+      <ul>
+      <li>
+          <label for="question">News</label>
+          <input type="text" name="search-term" id="js-search-term" required />
+          <span>Find interesting news articles to read while you enjoy your coffee</span>
+      </li>
+      <li>
+          <label for="email">Location</label>
+          <input id="pac-input" class="controls" type="text" placeholder="" required />
+          <span>Type in your location and find cafés near you</span>
+      </li>
+      <li>
+        <input id="submit" type="button" value="Find" src="#map">
+      </li>
+      </ul>
+      </form>
 
     </header>
     <main role="main">
-      <section role="region" class="google-map">
-      <section id="map"></section>
+      <section role="region">
+        <div class="detailBox">
+          <h2 id="iconClick">Click icon for location details</h2>
+            <section role="region" id="cafe-info-page" style="display: none;">
+                <div id="info-container">
+                    <div class="cafe-img"></div>
+                    <span class="text-container"></span>
+                </div>
+                <div id="results-wrapper">
+                    <div class="results-section-2"></div>
+                    <div class="yt-results-section"></div>
+                </div>
+            </section>
+        </div>
+        <section id="map"></section>
       </section>
-      <section role="region" id="cafe-info-page" style="display: none;">
+      <!-- <section role="region" id="cafe-info-page" style="display: none;">
           <div id="info-container">
               <div class="cafe-img"></div>
               <span class="text-container"></span>
@@ -33,14 +56,14 @@
               <div class="results-section-2"></div>
               <div class="yt-results-section"></div>
           </div>
-      </section>
-      <section>
+      </section> -->
+      <section class="news">
         <div class="container">
-          <h1>News finder</h1>
+          
   
           <p id="js-error-message" class="error-message"></p>
           <section id="results" class="hidden">
-            <h2>Search results</h2>
+            
             <ul id="results-list">
             </ul>
           </section>
