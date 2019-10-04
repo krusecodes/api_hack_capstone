@@ -10,11 +10,15 @@
     <header>
       <h1>Today's News & Coffee Brews</h1>
       <h2>Instructions:</h2>
-      <p>1. Type in your location and find cafés near you. Click the icon for more details.</p>
-      <p>2. Find interesting news articles to read while you enjoy your coffee</p>
-      <input id="pac-input" class="controls" type="text" placeholder="Enter a location or a café name">
-      <!-- <input id="address" type="textbox" value="Sydney, NSW"> -->
-      <input id="submit" type="button" value="Geocode">
+
+    <form>
+      <label for="question">1. Find interesting news articles to read while you enjoy your coffee.</label>
+      <input type="text" name="search-term" id="js-search-term" required>
+      <label for="question">2. Type in your location and find cafés near you. Click the icon for more details.</label>
+      <input id="pac-input" class="controls" type="text" placeholder="Enter a location or a café name" required>
+      <input id="submit" type="button" value="Find">
+    </form>
+
     </header>
     <main role="main">
       <section role="region" class="google-map">
@@ -34,13 +38,6 @@
         <div class="container">
           <h1>News finder</h1>
   
-          <form id="js-form">
-              <label for="search-term">Search term</label>
-              <input type="text" name="search-term" id="js-search-term" required>
-  
-              <input type="submit" value="Go!">
-          </form>
-  
           <p id="js-error-message" class="error-message"></p>
           <section id="results" class="hidden">
             <h2>Search results</h2>
@@ -50,7 +47,7 @@
       </div>
       </section>
   </main>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDttWY6FVRVPYVS04eTBI7OX0xMHgeEFNM&libraries=places&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5WbWVVaqL48DOFSzkJ97e7-wwzPkXyxg&libraries=places&callback=initMap" async defer></script>
     <!-- AIzaSyC5WbWVVaqL48DOFSzkJ97e7-wwzPkXyxg -->
     <script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
     <script src="index.js"></script>

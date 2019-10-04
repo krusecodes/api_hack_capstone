@@ -1,3 +1,31 @@
+html, body {
+    padding:0px;
+    margin:0px;
+ }
+
+ /* header { 
+    background: url(Content/coffee_header) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } */
+
+  header {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.721), rgba(255, 255, 255, 0.721)), url("Content/Content/coffee_header");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: #3A3B3D;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
 #map {
     height: 375px;
     max-width: 800px;
