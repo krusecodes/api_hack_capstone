@@ -6,6 +6,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link rel = "stylesheet" type = "text/css" href = "index.css" />
     <link rel = "stylesheet" type = "text/css" href = "form.css" />
+    <!-- <link rel = "stylesheet" type = "text/css" href = "info.css" /> -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:500|PT+Sans&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -24,39 +27,33 @@
           <span>Type in your location and find cafés near you</span>
       </li>
       <li>
-        <input id="submit" type="button" value="Find" src="#map">
+        <input id="submit" type="button" value="Find" required/>
       </li>
       </ul>
       </form>
 
     </header>
     <main role="main">
-      <section role="region">
-        <div class="detailBox">
-          <h2 id="iconClick">Click icon for location details</h2>
-            <section role="region" id="cafe-info-page" style="display: none;">
-                <div id="info-container">
-                    <div class="cafe-img"></div>
-                    <span class="text-container"></span>
-                </div>
-                <div id="results-wrapper">
-                    <div class="results-section-2"></div>
-                    <div class="yt-results-section"></div>
-                </div>
-            </section>
-        </div>
-        <section id="map"></section>
+      <!-- <section id="map"></section> -->
+      <section class="detailBox">
+          <div class="cafeInfo">
+              <input id="newSearch" type="button" value="New Search" src="#map">
+              <h2 id="iconClick">Click icon for location details</h2>
+                <section role="region" id="cafe-info-page" style="display: none;">
+                    <div id="info-container">
+                        <div class="cafe-img"></div>
+                        <span class="text-container"></span>
+                    </div>
+                    <div id="results-wrapper">
+                        <div class="results-section-2"></div>
+                        <div class="yt-results-section"></div>
+                    </div>
+                </section>
+            </div>
       </section>
-      <!-- <section role="region" id="cafe-info-page" style="display: none;">
-          <div id="info-container">
-              <div class="cafe-img"></div>
-              <span class="text-container"></span>
-          </div>
-          <div id="results-wrapper">
-              <div class="results-section-2"></div>
-              <div class="yt-results-section"></div>
-          </div>
-      </section> -->
+      <section role="region" id="map"></section>
+        </div>
+      </section>
       <section class="news">
         <div class="container">
           
@@ -69,10 +66,24 @@
           </section>
       </div>
       </section>
+      <!-- <section class="container">
+        <div class="left-half">
+          <article>
+            <h1>Left Half</h1>
+            <p>Weekends don't count unless you spend them doing something completely pointless.</p>
+          </article>
+        </div>
+        <div class="right-half">
+          <article>
+            <h1>Right Half</h1>
+            <p>If your knees aren't green by the end of the day, you ought to seriously re-examine your life.</p>
+          </article>
+        </div>
+      </section> -->
   </main>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5WbWVVaqL48DOFSzkJ97e7-wwzPkXyxg&libraries=places&callback=initMap" async defer></script>
     <!-- AIzaSyC5WbWVVaqL48DOFSzkJ97e7-wwzPkXyxg -->
-    <script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script> -->
     <script src="index.js"></script>
     <script src="news.js"></script>
     <script src="app.js"></script>

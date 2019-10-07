@@ -1,21 +1,8 @@
-// fetch('https://maps.googleapis.com/maps/api/js?key=AIzaSyDttWY6FVRVPYVS04eTBI7OX0xMHgeEFNM&libraries=places&callback=initMap')
 
-// const fetchGoogleMaps = require('fetch-google-maps');
-
-// fetchGoogleMaps({
-// 	apiKey: 'AIzaSyDttWY6FVRVPYVS04eTBI7OX0xMHgeEFNM',
-// 	language: 'en',
-// 	libraries: ['geometry']
-// }).then(( Maps ) => {
-// 	const map = new Maps.Map(document.getElementById('map'), {
-// 		zoom: 8,
-// 		center: new Maps.LatLng(-34.397, 150.644)
-// 	});
-// });
 
 $('#map').hide();
 $('#iconClick').hide();
-
+$('main').hide();
 
 'use strict';
 
@@ -24,6 +11,7 @@ const apiKey = 'cf4f9887a1b64546af749e8c8bf3a1c6'
 const searchURL = 'https://newsapi.org/v2/everything';
 
 // $('.container').hide;
+
 
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
@@ -42,12 +30,12 @@ function displayResults(responseJson, maxResults) {
     //list with the article title, source, author,
     //description, and image
     $('#results-list').append(
-      `<h1>News finder</h1>
+      `<h1 class="newsTitle">News finder</h1>
       <h2>Search results</h2>
       <li><h3><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></h3>
-      <p>${responseJson.articles[i].source.name}</p>
-      <p>By ${responseJson.articles[i].author}</p>
-      <p>${responseJson.articles[i].description}</p>
+      <p><b>${responseJson.articles[i].source.name}</b></p>
+      <p><b>By ${responseJson.articles[i].author}</b></p>
+      <p><b>${responseJson.articles[i].description}</b></p>
       <img class="newPics" src='${responseJson.articles[i].urlToImage}'>
       </li>`
     )};
@@ -418,6 +406,7 @@ function initMap() {
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
     // searchBox.addListener('places_changed', function () {
+
     $( "#submit" ).click(function() {
       // News API
       event.preventDefault();
@@ -433,6 +422,8 @@ function initMap() {
         let place = places[0];
         $('#map').show();
         $('#iconClick').show();
+        $('main').show();
+        $('header').hide();
         //        index = 0;
 
         // places long form
@@ -477,6 +468,16 @@ function c(results, status) {
         results.forEach(createMarker);
     }
 }
+
+$("#newSearch").click(function() {
+  event.preventDefault();
+  $('#map').hide();
+  $('#iconClick').hide();
+  $('main').hide();
+  $('header').show();
+});
+
+$("input").prop('required',true);
 
 function createMarker(place) {
     markers = new google.maps.Marker({
@@ -527,4 +528,3 @@ function createMarker(place) {
     });
 }
 
-$(watchForm);
