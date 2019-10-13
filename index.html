@@ -6,9 +6,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link rel = "stylesheet" type = "text/css" href = "index.css" />
     <link rel = "stylesheet" type = "text/css" href = "form.css" />
-    <!-- <link rel = "stylesheet" type = "text/css" href = "info.css" /> -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:500|PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -17,29 +16,30 @@
     <form class="form-style-7">
       <ul>
       <li>
-          <label for="question">News</label>
-          <input type="text" name="search-term" id="js-search-term" required />
+          <label>News</label>
+          <input type="text" name="search-term" id="js-search-term" />
           <span>Find interesting news articles to read while you enjoy your coffee</span>
       </li>
-      <div id="wrongNews"></div>
+      <!-- <div id="wrongNews"></div> -->
+      <li id="wrongNews"></li>
       <li>
-          <label for="email">Location</label>
-          <input id="pac-input" class="controls" type="text" placeholder="" required />
+          <label>Location</label>
+          <input id="pac-input" class="controls" type="text" placeholder="" />
           <span>Type in your location and find cafés near you</span>
       </li>
-      <div id="wrongMap"></div>
+      <!-- <div id="wrongMap"></div> -->
+      <li id="wrongMap"></li>
       <li>
-        <input id="submit" type="button" value="Find" required/>
+        <input id="submit" type="button" value="Find"/>
       </li>
       </ul>
       </form>
 
     </header>
     <main role="main">
-      <!-- <section id="map"></section> -->
       <section class="detailBox">
           <div class="cafeInfo">
-              <input id="newSearch" type="button" value="New Search" src="#map">
+              <input id="newSearch" type="button" value="New Search">
               <h2 id="iconClick">Click icon for location details</h2>
                 <section role="region" id="cafe-info-page" style="display: none;">
                     <div id="info-container">
@@ -55,8 +55,6 @@
       </section>
       <p id="js-error-message" class="error-message"></p>
       <section role="region" id="map"></section>
-        </div>
-      </section>
       <section class="news">
         <div class="container">
           <section id="results" class="hidden">
