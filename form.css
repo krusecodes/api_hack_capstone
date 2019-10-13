@@ -9,6 +9,12 @@
 	border-radius: 15px;
 }
 
+#wrongNews, #wrongMap {
+	border: none;
+}
+
+
+
 .form-style-7 h1{
 	display: block;
 	text-align: center;
