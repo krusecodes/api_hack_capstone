@@ -21,11 +21,13 @@
           <input type="text" name="search-term" id="js-search-term" required />
           <span>Find interesting news articles to read while you enjoy your coffee</span>
       </li>
+      <div id="wrongNews"></div>
       <li>
           <label for="email">Location</label>
           <input id="pac-input" class="controls" type="text" placeholder="" required />
           <span>Type in your location and find cafés near you</span>
       </li>
+      <div id="wrongMap"></div>
       <li>
         <input id="submit" type="button" value="Find" required/>
       </li>
@@ -51,14 +53,12 @@
                 </section>
             </div>
       </section>
+      <p id="js-error-message" class="error-message"></p>
       <section role="region" id="map"></section>
         </div>
       </section>
       <section class="news">
         <div class="container">
-          
-  
-          <p id="js-error-message" class="error-message"></p>
           <section id="results" class="hidden">
             
             <ul id="results-list">
@@ -66,22 +66,8 @@
           </section>
       </div>
       </section>
-      <!-- <section class="container">
-        <div class="left-half">
-          <article>
-            <h1>Left Half</h1>
-            <p>Weekends don't count unless you spend them doing something completely pointless.</p>
-          </article>
-        </div>
-        <div class="right-half">
-          <article>
-            <h1>Right Half</h1>
-            <p>If your knees aren't green by the end of the day, you ought to seriously re-examine your life.</p>
-          </article>
-        </div>
-      </section> -->
   </main>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5WbWVVaqL48DOFSzkJ97e7-wwzPkXyxg&libraries=places&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDttWY6FVRVPYVS04eTBI7OX0xMHgeEFNM&libraries=places&callback=initMap" async defer></script>
     <!-- AIzaSyC5WbWVVaqL48DOFSzkJ97e7-wwzPkXyxg -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script> -->
     <script src="index.js"></script>

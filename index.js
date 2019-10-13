@@ -1,4 +1,6 @@
+let isNewsSuccess = false;
 
+let isLocationSuccess = false;
 
 $('#map').hide();
 $('#iconClick').hide();
@@ -13,6 +15,8 @@ const searchURL = 'https://newsapi.org/v2/everything';
 // $('.container').hide;
 
 
+
+
 function formatQueryParams(params) {
   const queryItems = Object.keys(params)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -23,6 +27,14 @@ function displayResults(responseJson, maxResults) {
   // if there are previous results, remove them
   console.log(responseJson);
   $('#results-list').empty();
+  if (responseJson.totalResults === 0){
+    console.log("things")
+    $("#wrongNews").append(
+      `<h3 class="alert">Something went wrong: try another search.</h3>`
+    )
+    return;
+  } else {
+    isNewsSuccess = true;
   // iterate through the articles array, stopping at the max number of results
   for (let i = 0; i < responseJson.articles.length & i<maxResults ; i++){
     // for each video object in the articles
@@ -41,6 +53,7 @@ function displayResults(responseJson, maxResults) {
     )};
   //display the results section  
   $('#results').removeClass('hidden');
+}
 };
 
 function getNews(query, maxResults=5) {
@@ -60,6 +73,7 @@ function getNews(query, maxResults=5) {
 
   fetch(url, options)
     .then(response => {
+      console.log(response)
       if (response.ok) {
         return response.json();
       }
@@ -67,9 +81,13 @@ function getNews(query, maxResults=5) {
     })
     .then(responseJson => displayResults(responseJson, maxResults))
     .catch(err => {
+      console.log(err)
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
+
 }
+
+// google map style
 
 let mapStyle = [
     {
@@ -370,7 +388,7 @@ let infowindow;
 let service;
 let bounds;
 let markers = [];
-//let index = 0;
+
 
 
 let iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
@@ -412,26 +430,35 @@ function initMap() {
       event.preventDefault();
       const searchTerm = $('#js-search-term').val();
       const maxResults = $('#js-max-results').val();
-      getNews(searchTerm, maxResults);
+      console.log(searchTerm)
 
 
       // Google Map API
         bounds = new google.maps.LatLngBounds();
-
         let places = searchBox.getPlaces();
+        console.log(places)
+        if (!places) {
+          $("#wrongMap").append(
+            `<h3 class="alert">Something went wrong: try another search.</h3>`
+          )
+          return;
+      } else {
+        isLocationSuccess = true;
+        getNews(searchTerm, maxResults);
+      }
+      if (isNewsSuccess === false) {
+        return;
+      }
         let place = places[0];
         $('#map').show();
         $('#iconClick').show();
         $('main').show();
         $('header').hide();
-        //        index = 0;
+    
 
         // places long form
         // let places = new google.maps.places.SearchBox(document.getElementById('pac-input')).getPlaces();
 
-        if (places.length == 0) {
-            return;
-        }
         // Places Search Option: Nearby Search
         service.nearbySearch({
             location: place.geometry.location,
@@ -445,24 +472,22 @@ function initMap() {
         if (place.geometry.viewport) {
             // Only geocodes have viewport.
             bounds.union(place.geometry.viewport);
-            //            console.log('Place had viewport');
+            
         } else {
             bounds.extend(place.geometry.location);
-            //            console.log('Place did not have viewport ELSE');
+            
         }
 
         map.fitBounds(bounds);
 
         //sets Google search box back to empty
         $('#pac-input').val('');
-        //        map.setZoom(10);
 
     });
 }
 
 //callback function as dictated by Google Maps API
 function c(results, status) {
-    //console.log(`status parameter is ${status}`);
 
     if (status === google.maps.places.PlacesServiceStatus.OK) {
         results.forEach(createMarker);
@@ -475,6 +500,7 @@ $("#newSearch").click(function() {
   $('#iconClick').hide();
   $('main').hide();
   $('header').show();
+  location.reload();
 });
 
 $("input").prop('required',true);
