@@ -6,6 +6,7 @@ $('#map').hide();
 $('#iconClick').hide();
 $('main').hide();
 
+
 'use strict';
 
 const apiKey = 'cf4f9887a1b64546af749e8c8bf3a1c6'
@@ -29,14 +30,13 @@ function displayResults(responseJson, maxResults) {
   $('#results-list').empty();
   if (responseJson.totalResults === 0){
     console.log("things")
-    $("#wrongNews").append(
-      `<h3 class="alert">Something went wrong: try another search.</h3>`
-    )
+    $('#js-error-message').text(`If you want to see the latest news, try adding a news search.`);
     return;
   } else {
     isNewsSuccess = true;
   // iterate through the articles array, stopping at the max number of results
   for (let i = 0; i < responseJson.articles.length & i<maxResults ; i++){
+    console.log(responseJson.articles[i].title);
     // for each video object in the articles
     //array, add a list item to the results 
     //list with the article title, source, author,
@@ -73,8 +73,8 @@ function getNews(query, maxResults=5) {
 
   fetch(url, options)
     .then(response => {
-      console.log(response)
       if (response.ok) {
+        console.log(response);
         return response.json();
       }
       throw new Error(response.statusText);
@@ -82,7 +82,7 @@ function getNews(query, maxResults=5) {
     .then(responseJson => displayResults(responseJson, maxResults))
     .catch(err => {
       console.log(err)
-      $('#js-error-message').text(`Something went wrong: ${err.message}`);
+      $('#js-error-message').text(`If you want to see the latest news, try adding a news search.`);
     });
 
 }
@@ -430,7 +430,9 @@ function initMap() {
       event.preventDefault();
       const searchTerm = $('#js-search-term').val();
       const maxResults = $('#js-max-results').val();
+      const locationInput = $('#pac-input').val();
       console.log(searchTerm)
+      console.log(locationInput)
 
 
       // Google Map API
@@ -442,19 +444,22 @@ function initMap() {
             `<h3 class="alert">Something went wrong: try another search.</h3>`
           )
           return;
-      } else {
+        } 
+        else {
         isLocationSuccess = true;
         getNews(searchTerm, maxResults);
       }
-      if (isNewsSuccess === false) {
-        return;
-      }
-        let place = places[0];
-        $('#map').show();
-        $('#iconClick').show();
-        $('main').show();
-        $('header').hide();
-    
+      console.log(isNewsSuccess);
+      // if (isNewsSuccess === false) {
+      //   return;
+      // }
+      
+      let place = places[0];
+      $('#map').show();
+      $('#iconClick').show();
+      $('main').show();
+      $('header').hide();
+      
 
         // places long form
         // let places = new google.maps.places.SearchBox(document.getElementById('pac-input')).getPlaces();
