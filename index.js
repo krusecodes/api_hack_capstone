@@ -44,7 +44,7 @@ function displayResults(responseJson, maxResults) {
     $('#results-list').append(
       `<h1 class="newsTitle">News finder</h1>
       <h2>Search results</h2>
-      <li><h3><a href="${responseJson.articles[i].url}">${responseJson.articles[i].title}</a></h3>
+      <li><h3><a href="${responseJson.articles[i].url}" target="_blank">${responseJson.articles[i].title}</a></h3>
       <p><b>${responseJson.articles[i].source.name}</b></p>
       <p><b>By ${responseJson.articles[i].author}</b></p>
       <p><b>${responseJson.articles[i].description}</b></p>
@@ -554,8 +554,8 @@ function createMarker(place) {
 
     // Shows name when user hovers over markers
     google.maps.event.addListener(markers, 'mouseover', function () {
-        infowindow.setContent(place.name);
-        infowindow.open(map, this);
+      infowindow.setContent(place.name);
+      infowindow.open(map, this);
     });
 }
 

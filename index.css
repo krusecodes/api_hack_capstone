@@ -17,7 +17,7 @@ body {
   
 h1 {
   text-align: center;
-  padding-top: 10%;
+  padding-top: 5%;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -72,12 +72,13 @@ p {
 }
 
 .newPics {
-  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 #js-error-message {
   text-align: center;
-  padding: 30px;
   font-size: 25px;
   z-index: 10;
 }
@@ -91,4 +92,10 @@ li {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 720px) {
+ #map {
+   float: left;
+ }
 }
